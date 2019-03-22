@@ -13,7 +13,7 @@ from ..utils.re_ranking import re_ranking
 from ..utils.metric import cmc, mean_ap
 from ..utils.dataset_utils import parse_im_name
 from ..utils.distance import normalize
-from ..utils.distance import compute_dist
+from ..utils.distance0 import compute_dist
 
 
 class TestSet(Dataset):
@@ -21,9 +21,9 @@ class TestSet(Dataset):
   Args:
     extract_feat_func: a function to extract features. It takes a batch of
       images and returns a batch of features.
-    marks: a list, each element e denoting whether the image is from 
+    marks: a list, each element e denoting whether the image is from
       query (e == 0), or
-      gallery (e == 1), or 
+      gallery (e == 1), or
       multi query (e == 2) set
   """
 
