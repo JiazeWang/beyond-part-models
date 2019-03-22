@@ -46,26 +46,25 @@ def compute_dist(array1, array2, type='euclidean'):
 
 def reranknew(qf, gf):
     print("Reranking new now!!!!!!")
-    qf_0 = qf[:, 0:2048]
-    qf_1 = qf[:, 2048:4096]
-    qf_2 = qf[:, 4096:6144]
-    qf_3 = qf[:, 6144:8192]
-    qf_4 = qf[:, 8192:10240]
-    qf_5 = qf[:, 10240:12288]
+    gf_0 = gf[:, 0:256]
+    gf_1 = gf[:, 256:512]
+    gf_2 = gf[:, 512:768]
+    gf_3 = gf[:, 768:1024]
+    gf_4 = gf[:, 1024:1280]
+    gf_5 = gf[:, 1280:1536]
 
-    gf_0 = gf[:, 0:2048]
-    gf_1 = gf[:, 2048:4096]
-    gf_2 = gf[:, 4096:6144]
-    gf_3 = gf[:, 6144:8192]
-    gf_4 = gf[:, 8192:10240]
-    gf_5 = gf[:, 10240:12288]
-
+    qf_0 = qf[:, 0:256]
+    qf_1 = qf[:, 256:512]
+    qf_2 = qf[:, 512:768]
+    qf_3 = qf[:, 768:1024]
+    qf_4 = qf[:, 1024:1280]
+    qf_5 = qf[:, 1280:1536]
     batchsize_q = qf.shape[0]
     batchsize_g = gf.shape[0]
     d = np.zeros([6, 6, batchsize_q, batchsize_g])
     for m in range(0, 6):
         for n in range(0, 6):
-            d[m][n]=cdist(qf[:, 2048*m:2048*m+2048], gf[:, 2048*n:2048*n+2048])
+            d[m][n]=cdist(qf[:, 256*m:256*m+256], gf[:, 256*n:256*n+256])
     d1 = np.zeros([6, batchsize_q, batchsize_g])
     for m in range(0, 6):
         for i in range(0, batchsize_q):
