@@ -2,6 +2,7 @@
 Notice the input/output shape of methods, so that you can better understand
 the meaning of these methods."""
 import numpy as np
+from scipy.spatial.distance import cdist
 
 
 def normalize(nparray, order=2, axis=0):

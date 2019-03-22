@@ -123,7 +123,7 @@ class Config(object):
     self.train_shuffle = True
 
     self.test_mirror_type = None
-    self.test_batch_size = 256
+    self.test_batch_size = 128
     self.test_final_batch = True
     self.test_shuffle = False
 
