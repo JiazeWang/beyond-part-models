@@ -70,6 +70,6 @@ def reranknew(qf, gf):
         for i in range(0, batchsize_q):
             for j in range(0, batchsize_g):
                 d1[m][i][j] = min(d[m][0][i][j], d[m][1][i][j], d[m][2][i][j], d[m][3][i][j], d[m][4][i][j], d[m][5][i][j])
-        #dis = d1 + d2 + d3 + d4 + d5 + d6 + d7
-    dis = np.square(d1[1])+np.square(d1[2])+np.square(d1[3])+np.square(d1[4])+np.square(d1[5]) +np.square(d1[0])
+    dis = d1[0] + d1[1] + d1[2] + d1[3] + d1[4] + d1[5] 
+    #dis = np.square(d1[1])+np.square(d1[2])+np.square(d1[3])+np.square(d1[4])+np.square(d1[5]) +np.square(d1[0])
     return dis
