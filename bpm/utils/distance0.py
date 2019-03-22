@@ -20,6 +20,10 @@ def compute_dist(array1, array2, type='euclidean'):
   Returns:
     numpy array with shape [m1, m2]
   """
+  print("q.shape:", array1.shape)
+  print("p.shape:", array2.shape)
+  np.save("q.npy", array1)
+  np.save("g.npy", array2)
   assert type in ['cosine', 'euclidean']
   if type == 'cosine':
     array1 = normalize(array1, axis=1)
